@@ -88,8 +88,8 @@ def work_bot(longpoll, vk_session, *commands):
                                                      random_id=0)
                                     for text in ['напишите ' + a for a in ['название блюда',
                                                                            'его ингредиенты',
-                                                                           'способ приготовления',
-                                                                           'пищевую ценность на 100г']]:
+                                                                           'способ приготовления'
+                                                                                                ]]:
                                         vk.messages.send(peer_id=event.peer_id,
                                                          message=text,
                                                          keyboard=create_keyboard(['остановить', 'красный']),

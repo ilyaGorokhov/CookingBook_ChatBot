@@ -41,9 +41,8 @@ class HowToPrepare(Command):
                 for elem in my_query:
                     splitted_elem_ingridients = elem.ingridients.split(" ,")
                     splitted_cooking_method = elem.cooking_method.split(" ,")
-                    splitted_nutrition_facts = elem.nutrition_facts.split("/")
                     return 'Ингридиенты:' + "\n" + "\n".join(splitted_elem_ingridients) + "\n" + 'Способ\
-                     приготовления' + "\n" + "\n".join(splitted_cooking_method) + "\n".join(splitted_nutrition_facts)
+                     приготовления' + "\n" + "\n".join(splitted_cooking_method)
             elif dish != meal:
                 if len(similar_dishes) > 0:
                     self.flag = 1
@@ -55,7 +54,8 @@ class HowToPrepare(Command):
 
 class WhatToCookFrom(Command):
     """
-    This command gets a list of ingredients from the user and returns the names of dishes that can be prepared from them
+    This command gets a list of ingredients from the user and returns the names of
+    dishes that can be prepared from them
     """
 
     def __init__(self, my_bot, name, description):
